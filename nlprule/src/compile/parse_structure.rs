@@ -437,8 +437,11 @@ fn parse_match(m: structure::Match, engine: &Engine, info: &mut BuildInfo) -> Re
         conversion: match case_conversion {
             Some("alllower") => Conversion::AllLower,
             Some("startlower") => Conversion::StartLower,
-            Some("startupper") => Conversion::StartUpper,
+            Some("startupper") | Some("firstupper") => Conversion::StartUpper,
             Some("allupper") => Conversion::AllUpper,
+            // LanguageTool keeps the case of the matched token; the replacement is derived
+            // from the token text already, so no conversion is the closest equivalent
+            Some("preserve") => Conversion::Nop,
             Some(x) => {
                 return Err(Error::Unimplemented(format!(
                     "case conversion {} not supported.",
@@ -629,7 +632,7 @@ fn parse_pattern(
                     unify: tokens.tokens[0].unify.as_ref().map(|x| x == "yes"),
                 });
             }
-            structure::PatternPart::Feature(_) => {}
+            structure::PatternPart::Feature(_) | structure::PatternPart::Example(_) => {}
         }
     }
 
@@ -806,10 +809,16 @@ impl Rule {
 
         let mut examples = Vec::new();
         for example in &data.examples {
-            if example.kind.is_some() {
-                return Err(Error::Unimplemented(
-                    "examples with `type` (i. e. 'triggers_error') are not implemented.".into(),
-                ));
+            match example.kind.as_deref() {
+                // examples that only check that the rule fires, without a specific suggestion:
+                // skip the example, keep the rule
+                Some("triggers_error") => continue,
+                None | Some("correct") | Some("incorrect") => {}
+                Some(_) => {
+                    return Err(Error::Unimplemented(
+                        "examples with `type` (i. e. 'triggers_error') are not implemented.".into(),
+                    ))
+                }
             }
 
             let mut texts = Vec::new();
@@ -1104,7 +1113,8 @@ impl DisambiguationRule {
                                 ))
                             }))
                         }
-                        structure::PatternPart::Feature(_) => {}
+                        structure::PatternPart::Feature(_) | structure::PatternPart::Example(_) => {
+                        }
                     }
                 }
 
@@ -1175,7 +1185,8 @@ impl DisambiguationRule {
                             }));
                             mask.push(tokens.tokens[0].unify.is_some());
                         }
-                        structure::PatternPart::Feature(_) => {}
+                        structure::PatternPart::Feature(_) | structure::PatternPart::Example(_) => {
+                        }
                     }
                 }
 

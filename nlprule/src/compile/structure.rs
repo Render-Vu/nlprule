@@ -461,12 +461,16 @@ pub enum PatternPart {
     Or(TokenVector),
     And(TokenVector),
     Feature(Feature),
+    /// Examples inside antipatterns (newer LanguageTool versions); ignored.
+    Example(Example),
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct Pattern {
     pub case_sensitive: Option<String>,
+    /// Match against the tags before disambiguation (newer LanguageTool versions); ignored.
+    pub raw_pos: Option<String>,
     #[serde(rename = "$value")]
     pub parts: Vec<PatternPart>,
 }
@@ -500,6 +504,13 @@ pub struct Rule {
     pub filter: Option<Filter>,
     #[serde(rename = "__unused_unifications")]
     pub unifications: Option<Vec<Unification>>,
+    // attributes of newer LanguageTool versions which nlprule ignores
+    pub tags: Option<String>,
+    pub premium: Option<String>,
+    pub min_prev_matches: Option<String>,
+    pub distance_tokens: Option<String>,
+    #[serde(rename = "type")]
+    pub kind: Option<String>,
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -514,6 +525,13 @@ pub struct RuleGroup {
     pub url: Option<XmlText>,
     #[serde(rename = "rule")]
     pub rules: Vec<Rule>,
+    // attributes of newer LanguageTool versions which nlprule ignores
+    pub tags: Option<String>,
+    pub premium: Option<String>,
+    pub min_prev_matches: Option<String>,
+    pub distance_tokens: Option<String>,
+    #[serde(rename = "type")]
+    pub kind: Option<String>,
 }
 
 #[derive(Debug, Clone, Deserialize)]

@@ -396,6 +396,12 @@ impl Tokenizer {
                         .join(0)
                     };
 
+                    // ignored rules (e.g. ones using unsupported Java filters) are skipped
+                    // before construction so that they do not stop the rules after them
+                    if lang_options.ignore_ids.iter().any(|x| x.is_match(&id)) {
+                        return None;
+                    }
+
                     match DisambiguationRule::from_rule_structure(rule_structure, build_info) {
                         Ok(mut rule) => {
                             if error.is_none()

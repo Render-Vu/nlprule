@@ -1,6 +1,9 @@
 {
     "allow_errors": true,
-    "ignore_ids": [],
+    "ignore_ids": [
+        "DISAMBIGUATION/IGNORE_ENGLISH_WORDS",
+        "DISAMBIGUATION/IGNORE_ENGLISH_WORDS2"
+    ],
     "extra_split_chars": [
         "-",
         "─",
