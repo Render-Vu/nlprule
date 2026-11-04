@@ -2,7 +2,7 @@
 
 use crate::{types::*, utils::parallelism::MaybeParallelRefIterator};
 use bimap::BiMap;
-use fst::{IntoStreamer, Map, Streamer};
+use fst::{Automaton, IntoStreamer, Map, Streamer};
 use log::error;
 use serde::{Deserialize, Serialize};
 use std::{
@@ -10,6 +10,7 @@ use std::{
     cell::UnsafeCell,
     fmt,
     iter::{once, FusedIterator},
+    sync::Arc,
 };
 
 #[derive(Debug, Copy, Clone, Serialize, Deserialize, Hash, Eq, PartialEq, Ord, PartialOrd)]
@@ -367,6 +368,7 @@ impl From<TaggerFields> for Tagger {
             tag_store: data.tag_store,
             word_store,
             lang_options: data.lang_options,
+            word_fst: Some(Arc::new(word_store_fst)),
         }
     }
 }
@@ -528,9 +530,72 @@ pub struct Tagger {
     pub(crate) tag_store: BiMap<String, PosIdInt>,
     pub(crate) word_store: BiMap<String, WordIdInt>,
     pub(crate) lang_options: TaggerLangOptions,
+    /// The sorted word store as FST, kept from deserialization to allow fast prefix search
+    /// (used for autocompletion). Not serialized: it is rebuilt from `word_store` on save.
+    pub(crate) word_fst: Option<Arc<Map<Vec<u8>>>>,
 }
 
 impl Tagger {
+    /// Returns all known *inflected forms* (i.e. words which have at least one tag) starting with `prefix`,
+    /// together with their [WordData] (lemma and part-of-speech tag), in lexicographic byte order.
+    ///
+    /// At most `max_scan` dictionary entries are looked at, so short prefixes stay cheap.
+    /// Lemmas which are not themselves inflected forms are skipped.
+    pub fn words_with_prefix<'a>(
+        &'a self,
+        prefix: &str,
+        max_scan: usize,
+    ) -> Vec<(&'a str, Vec<WordData<'a>>)> {
+        let mut out = Vec::new();
+
+        let push = |id: WordIdInt, out: &mut Vec<(&'a str, Vec<WordData<'a>>)>| {
+            if let Some(pairs) = self.tags.get(&id) {
+                if pairs.is_empty() {
+                    return;
+                }
+                let word = self.str_for_word_id(&id);
+                let data = RawTagIter {
+                    tagger: self,
+                    slice_iter: pairs.iter(),
+                }
+                .collect();
+                out.push((word, data));
+            }
+        };
+
+        if let Some(fst) = &self.word_fst {
+            let automaton = fst::automaton::Str::new(prefix).starts_with();
+            let mut stream = fst.search(automaton).into_stream();
+            let mut scanned = 0;
+
+            while let Some((_, value)) = stream.next() {
+                scanned += 1;
+                if scanned > max_scan {
+                    break;
+                }
+                push(WordIdInt(value as u32), &mut out);
+            }
+        } else {
+            let mut ids: Vec<(&str, WordIdInt)> = self
+                .word_store
+                .iter()
+                .filter(|(word, _)| word.starts_with(prefix))
+                .map(|(word, id)| (word.as_str(), *id))
+                .collect();
+            ids.sort_unstable();
+            for (_, id) in ids.into_iter().take(max_scan) {
+                push(id, &mut out);
+            }
+        }
+
+        out
+    }
+
+    /// Whether the given word is a known inflected form (has at least one tag).
+    pub fn is_known_form(&self, word: &str) -> bool {
+        self.get_raw(word).len() > 0
+    }
+
     /// Directly looks up the given word in the `tags` map and returns
     /// corresponding [WordData].
     fn get_raw(&self, word: &str) -> RawTagIter {

@@ -73,6 +73,7 @@ use thiserror::Error;
 
 #[cfg(feature = "compile")]
 pub mod compile;
+pub mod complete;
 mod filter;
 pub mod rule;
 pub mod rules;

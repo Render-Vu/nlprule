@@ -1,3 +1,14 @@
+# Unreleased (fork)
+
+## New features
+
+- Grammar-aware word completion in the new `complete` module: prefix search over the tagger FST,
+  expected part-of-speech tags inferred from the preceding words (Spanish EAGLES agreement rules),
+  optional frequency ranking and optional validation of candidates with the rules.
+- `Tagger::words_with_prefix` and `Tagger::is_known_form`. The tagger keeps the word FST it loads (not serialized).
+- `complete` CLI (`--features bin`) and the `nlprule-server` crate (LanguageTool-compatible `/v2/check` and `/complete`).
+- `scripts/download_es.sh` to fetch the Spanish binaries.
+
 # 0.6.4
 
 ## Internal improvements

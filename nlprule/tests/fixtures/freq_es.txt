@@ -1,0 +1,7 @@
+juega 900
+juego 800
+juegan 500
+jueves 400
+juez 300
+jueceo 1
+de 100000

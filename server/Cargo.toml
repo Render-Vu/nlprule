@@ -1,0 +1,17 @@
+[package]
+name = "nlprule-server"
+version = "0.1.0"
+edition = "2018"
+license = "MIT OR Apache-2.0"
+description = "HTTP server for nlprule: LanguageTool-compatible /v2/check and grammar-aware /complete."
+publish = false
+
+[dependencies]
+nlprule = { path = "../nlprule" }
+tiny_http = "0.12"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1"
+form_urlencoded = "1"
+clap = "3.0.0-beta.1"
+env_logger = "0.8"
+log = "0.4"

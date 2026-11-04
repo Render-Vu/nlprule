@@ -20,6 +20,35 @@
     </a>
 </p>
 
+> **Fork: corrector + autocompletado en español.** Este fork añade autocompletado con concordancia
+> gramatical sobre el mismo diccionario FST que usa el corrector (3,3 M formas con lema y etiqueta EAGLES),
+> un CLI de prueba y un servidor HTTP compatible con la API `/v2/check` de LanguageTool.
+>
+> ```bash
+> scripts/download_es.sh
+> cargo run --release -p nlprule --features bin --bin complete -- -t storage/es_tokenizer.bin "Los niños jue"
+> # prefix "jue" | expected ["A[QO]?MP*", "V?[IS]?3P*"]
+> #   juegan   VMIP3P0          ✓
+> #   jueguen  VMM03P0,VMSP3P0  ✓
+> cargo run --release -p nlprule-server -- -t storage/es_tokenizer.bin -r storage/es_rules.bin
+> ```
+>
+> Desde Rust:
+>
+> ```rust
+> use nlprule::{Tokenizer, complete::{Completer, CompletionOptions, Frequencies}};
+> let tokenizer = Tokenizer::new("storage/es_tokenizer.bin")?;
+> let freq = Frequencies::from_path("es_50k.txt")?; // opcional: líneas "palabra conteo"
+> let completer = Completer::new(&tokenizer).with_frequencies(&freq);
+> let result = completer.complete("si nosotros escrib", &CompletionOptions::default());
+> // escribiéramos, escribiésemos (subjuntivo imperfecto tras «si» + 1.ª plural)
+> ```
+>
+> Detalles del servidor e integración con Emacs en [server/README.md](server/README.md).
+> El contexto se deduce con reglas de concordancia (determinante/adjetivo → sustantivo o adjetivo
+> concordante; sustantivo → adjetivo o verbo en 3.ª persona; pronombre sujeto → verbo con su persona y
+> número; «si» → refuerzo del subjuntivo imperfecto), ver `nlprule/src/complete/context.rs`.
+
 A fast, low-resource Natural Language Processing and Error Correction library written in Rust. nlprule implements a rule- and lookup-based approach to NLP using resources from [LanguageTool](https://github.com/languagetool-org/languagetool).
 
 <details>

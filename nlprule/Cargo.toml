@@ -73,7 +73,7 @@ regex-fancy = ["fancy-regex"]
 regex-all-test = ["regex-onig", "regex-fancy"]
 
 # needed for the bin test targets and to compile nlprule binaries, you'll usually not need these
-bin = ["clap", "env_logger"]
+bin = ["clap", "env_logger", "serde_json"]
 compile = [
     "regex-syntax",
     "serde-xml-rs",
@@ -94,6 +94,10 @@ required-features = ["bin"]
 
 [[bin]]
 name = "run"
+required-features = ["bin"]
+
+[[bin]]
+name = "complete"
 required-features = ["bin"]
 
 [[bin]]
