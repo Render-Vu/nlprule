@@ -18,29 +18,62 @@ def write_freqlist(f, lang_code, top_n=1000):
         f.write(word.title() + "\n")
 
 
-def canonicalize(path):
-    et = ET.parse(str(path))
-    et.write_c14n(open(path, "wb"))
+def canonicalize(source, dest):
+    """Parse `source` resolving its (external) entities and write it canonicalized to `dest`.
+
+    Must parse the original file: LanguageTool's XML refers to entity files by relative path."""
+    parser = ET.XMLParser(load_dtd=True, resolve_entities=True, no_network=True, huge_tree=True)
+    et = ET.parse(str(source), parser)
+    with open(dest, "wb") as f:
+        et.write_c14n(f)
+    return et
 
 
-def copy_lt_files(out_dir, lt_dir, lang_code):
+def merge_rule_files(main, extra_paths, dest):
+    """Append the categories of other rule files (e.g. style.xml) to the main grammar file."""
+    parser = ET.XMLParser(load_dtd=True, resolve_entities=True, no_network=True, huge_tree=True)
+    tree = ET.parse(str(main), parser)
+    root = tree.getroot()
+    for path in extra_paths:
+        if not path.exists():
+            logging.warning(f"{path} does not exist.")
+            continue
+        extra = ET.parse(str(path), parser).getroot()
+        for category in extra.iter("category"):
+            root.append(category)
+    with open(dest, "wb") as f:
+        tree.write_c14n(f)
+
+
+def copy_lt_files(out_dir, lt_dir, lang_code, extra_rule_files=()):
     tag_dir = out_dir / "tags"
     tag_dir.mkdir()
 
     lt_resource_dir = lt_dir / "org" / "languagetool" / "resource" / lang_code
     lt_rule_dir = lt_dir / "org" / "languagetool" / "rules" / lang_code
 
-    for source, dest in [
-        (lt_resource_dir / "added.txt", tag_dir / "added.txt"),
-        (lt_resource_dir / "removed.txt", tag_dir / "removed.txt"),
-        (lt_resource_dir / "disambiguation.xml", out_dir / "disambiguation.xml"),
-        (lt_resource_dir / "multiwords.txt", tag_dir / "multiwords.txt",),
-        (lt_rule_dir / "grammar.xml", out_dir / "grammar.xml"),
+    # plain files; *_custom.txt files (newer LanguageTool versions) are appended
+    for sources, dest in [
+        (["added.txt", "added_custom.txt"], tag_dir / "added.txt"),
+        (["removed.txt", "removed_custom.txt"], tag_dir / "removed.txt"),
+        (["multiwords.txt"], tag_dir / "multiwords.txt"),
     ]:
-        if source.exists():
-            copyfile(source, dest)
-        else:
-            logging.warning(f"{source} does not exist.")
+        with open(dest, "wb") as out:
+            for name in sources:
+                source = lt_resource_dir / name
+                if source.exists():
+                    data = source.read_bytes()
+                    out.write(data if data.endswith(b"\n") else data + b"\n")
+                elif name == sources[0]:
+                    logging.warning(f"{source} does not exist.")
+
+    # XML files, with entities resolved and canonicalized
+    canonicalize(lt_resource_dir / "disambiguation.xml", out_dir / "disambiguation.xml")
+    merge_rule_files(
+        lt_rule_dir / "grammar.xml",
+        [lt_rule_dir / name for name in extra_rule_files],
+        out_dir / "grammar.xml",
+    )
 
     # copy from zipfiles
     for zipfile, source, dest in [
@@ -54,9 +87,6 @@ def copy_lt_files(out_dir, lt_dir, lang_code):
         with open(dest, "wb") as f:
             f.write(file.read(str(source)))
 
-    # canonicalize XML
-    for xmlfile in ["grammar.xml", "disambiguation.xml"]:
-        canonicalize(out_dir / xmlfile)
 
 
 def dump_dictionary(out_path, lt_dir, tag_dict_path, tag_info_path):
@@ -139,6 +169,12 @@ Only needed if the language requires a chunker (e. g. English).
         help="Path to the OpenNLP chunker binary. See token model message for details.",
     )
     parser.add_argument(
+        "--extra_rule_files",
+        nargs="*",
+        default=["style.xml"],
+        help="Rule files next to grammar.xml whose categories are merged into it (default: style.xml).",
+    )
+    parser.add_argument(
         "--out_dir",
         type=lambda p: Path(p).absolute(),
         help="Directory to store the build files in.",
@@ -148,7 +184,7 @@ Only needed if the language requires a chunker (e. g. English).
     args.out_dir.mkdir(parents=True)
 
     write_freqlist(open(args.out_dir / "common.txt", "w"), args.lang_code)
-    copy_lt_files(args.out_dir, args.lt_dir, args.lang_code)
+    copy_lt_files(args.out_dir, args.lt_dir, args.lang_code, args.extra_rule_files)
     dump_dictionary(
         args.out_dir / "tags" / "output.dump",
         args.lt_dir,

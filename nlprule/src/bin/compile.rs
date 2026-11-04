@@ -1,29 +1,37 @@
-use clap::Clap;
+use clap::{Arg, Command};
 use fs_err as fs;
 use nlprule::compile::{compile, Error};
 use std::io::BufWriter;
 use std::path::PathBuf;
 
-#[derive(clap::Clap)]
-#[clap(
-    version = env!("CARGO_PKG_VERSION"),
-    author = "Benjamin Minixhofer <bminixhofer@gmail.com>"
-)]
-pub struct BuildOptions {
-    #[clap(long, parse(from_os_str))]
-    pub build_dir: PathBuf,
-    #[clap(long, parse(from_os_str))]
-    pub tokenizer_out: PathBuf,
-    #[clap(long, parse(from_os_str))]
-    pub rules_out: PathBuf,
-}
-
 fn main() -> Result<(), Error> {
     env_logger::init();
-    let opts = BuildOptions::parse();
+    let matches = Command::new("compile")
+        .version(env!("CARGO_PKG_VERSION"))
+        .about("Compiles an nlprule build directory into tokenizer and rules binaries.")
+        .arg(
+            Arg::new("build-dir")
+                .long("build-dir")
+                .takes_value(true)
+                .required(true),
+        )
+        .arg(
+            Arg::new("tokenizer-out")
+                .long("tokenizer-out")
+                .takes_value(true)
+                .required(true),
+        )
+        .arg(
+            Arg::new("rules-out")
+                .long("rules-out")
+                .takes_value(true)
+                .required(true),
+        )
+        .get_matches();
+    let path = |name: &str| PathBuf::from(matches.value_of(name).expect("required"));
 
-    let tokenizer_sink = BufWriter::new(fs::File::create(&opts.tokenizer_out)?);
-    let rules_sink = BufWriter::new(fs::File::create(&opts.rules_out)?);
+    let tokenizer_sink = BufWriter::new(fs::File::create(path("tokenizer-out"))?);
+    let rules_sink = BufWriter::new(fs::File::create(path("rules-out"))?);
 
-    compile(opts.build_dir, rules_sink, tokenizer_sink)
+    compile(path("build-dir"), rules_sink, tokenizer_sink)
 }

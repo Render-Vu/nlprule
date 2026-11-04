@@ -150,9 +150,11 @@ fn route(state: &State, request: &mut Request) -> Result<Value, HttpError> {
             let params = read_params(request)?;
             complete(state, &params)
         }
-        (_, "/health") | (_, "/rules") | (_, "/v2/languages") | (_, "/v2/check") | (_, "/complete") => {
-            Err(HttpError(405, "method not allowed".into()))
-        }
+        (_, "/health")
+        | (_, "/rules")
+        | (_, "/v2/languages")
+        | (_, "/v2/check")
+        | (_, "/complete") => Err(HttpError(405, "method not allowed".into())),
         _ => Err(HttpError(404, format!("not found: {}", path))),
     }
 }

@@ -188,13 +188,22 @@ impl MultiwordTagger {
             if line.is_empty() {
                 continue;
             }
-            let tab_split: Vec<_> = line.split('\t').collect();
+            // older LanguageTool versions separate word and tag with a tab, newer ones also with ';'
+            let tab_split: Vec<_> = if line.contains('\t') {
+                line.split('\t').collect()
+            } else {
+                line.split(';').collect()
+            };
+            if tab_split.len() < 2 {
+                warn!("ignoring malformed multiword line: {:?}", line);
+                continue;
+            }
 
             let word: String = tab_split[0]
                 .split_whitespace()
                 .collect::<Vec<_>>()
                 .join(" ");
-            let pos = info.tagger().id_tag(tab_split[1]).to_owned_id();
+            let pos = info.tagger().id_tag(tab_split[1].trim()).to_owned_id();
             multiwords.push((word, pos));
         }
 
