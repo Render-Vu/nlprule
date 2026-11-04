@@ -44,7 +44,8 @@
 > // escribiéramos, escribiésemos (subjuntivo imperfecto tras «si» + 1.ª plural)
 > ```
 >
-> Detalles del servidor e integración con Emacs en [server/README.md](server/README.md).
+> Detalles del servidor en [server/README.md](server/README.md); autocompletado en Emacs con corfu
+> en [emacs/README.md](emacs/README.md).
 > El contexto se deduce con reglas de concordancia (determinante/adjetivo → sustantivo o adjetivo
 > concordante; sustantivo → adjetivo o verbo en 3.ª persona; pronombre sujeto → verbo con su persona y
 > número; «si» → refuerzo del subjuntivo imperfecto), ver `nlprule/src/complete/context.rs`.

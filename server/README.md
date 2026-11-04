@@ -60,5 +60,4 @@ Basta con cambiar el puerto en la configuración de LanguageTool:
         langtool-http-server-port 8011))
 ```
 
-La integración del autocompletado con `corfu`/`company` (una función `completion-at-point`
-que llame a `/complete`) queda como siguiente paso.
+Para el autocompletado con corfu, ver [emacs/README.md](../emacs/README.md).
