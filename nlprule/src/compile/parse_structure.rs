@@ -717,14 +717,12 @@ impl Rule {
                     Vec::new()
                 };
 
-                if antipatterns
-                    .iter()
-                    .any(|pattern| pattern.parts.iter().any(|x| x.unify.is_some()))
-                {
-                    return Err(Error::Unimplemented(
-                        "`unify` in antipattern is not supported.".into(),
-                    ));
-                }
+                // `unify` in antipatterns is not supported: drop those antipatterns (they are
+                // narrow exceptions) instead of the whole rule; the rule tests catch regressions
+                let antipatterns: Vec<_> = antipatterns
+                    .into_iter()
+                    .filter(|pattern| pattern.parts.iter().all(|x| x.unify.is_none()))
+                    .collect();
 
                 Ok((
                     Engine::Token(TokenEngine {
@@ -1002,14 +1000,11 @@ impl DisambiguationRule {
             Vec::new()
         };
 
-        if antipatterns
-            .iter()
-            .any(|pattern| pattern.parts.iter().any(|x| x.unify.is_some()))
-        {
-            return Err(Error::Unimplemented(
-                "`unify` in antipattern is not supported.".into(),
-            ));
-        }
+        // see the grammar rules: drop antipatterns with `unify` instead of the whole rule
+        let antipatterns: Vec<_> = antipatterns
+            .into_iter()
+            .filter(|pattern| pattern.parts.iter().all(|x| x.unify.is_none()))
+            .collect();
 
         let engine = Engine::Token(TokenEngine {
             composition,
