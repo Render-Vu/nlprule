@@ -127,6 +127,21 @@ fn route(state: &State, request: &mut Request) -> Result<Value, HttpError> {
             "code": state.language,
             "longCode": state.language,
         }])),
+        (Method::Get, "/rules") => {
+            // rule ids as LanguageTool names them (the group of `CATEGORY/GROUP/index`)
+            let mut ids: Vec<String> = state
+                .rules
+                .rules()
+                .iter()
+                .map(|rule| {
+                    let full = rule.id().to_string();
+                    full.split('/').nth(1).unwrap_or(&full).to_string()
+                })
+                .collect();
+            ids.sort();
+            ids.dedup();
+            Ok(json!({ "count": ids.len(), "rules": ids }))
+        }
         (Method::Get, "/v2/check") | (Method::Post, "/v2/check") => {
             let params = read_params(request)?;
             check::check(state, &params).map_err(bad_request)
@@ -135,7 +150,7 @@ fn route(state: &State, request: &mut Request) -> Result<Value, HttpError> {
             let params = read_params(request)?;
             complete(state, &params)
         }
-        (_, "/health") | (_, "/v2/languages") | (_, "/v2/check") | (_, "/complete") => {
+        (_, "/health") | (_, "/rules") | (_, "/v2/languages") | (_, "/v2/check") | (_, "/complete") => {
             Err(HttpError(405, "method not allowed".into()))
         }
         _ => Err(HttpError(404, format!("not found: {}", path))),

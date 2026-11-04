@@ -8,6 +8,8 @@
 - `Tagger::words_with_prefix` and `Tagger::is_known_form`. The tagger keeps the word FST it loads (not serialized).
 - `complete` CLI (`--features bin`) and the `nlprule-server` crate (LanguageTool-compatible `/v2/check` and `/complete`).
 - `scripts/download_es.sh` to fetch the Spanish binaries.
+- `bench/es`: quality benchmark against LanguageTool over the same `/v2/check` API (76 sentences,
+  12 completion cases), with a saved baseline and regression exit code. `nlprule-server` gets `/rules`.
 - `emacs/nlprule-complete.el`: a `completion-at-point` function and minor mode for corfu (or any capf frontend)
   backed by `/complete`, keeping the server ranking, re-querying while typing, with ERT tests.
 

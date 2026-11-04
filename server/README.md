@@ -19,6 +19,7 @@ El puerto por defecto es 8011 para poder convivir con LanguageTool en el 8010.
 | `/v2/check` | GET, POST (form) | `text` o `data` (anotaciones de LanguageTool), `language` (`es`, `es-ES`, `auto`), `disabledRules`, `disabledCategories` |
 | `/complete` | GET, POST (form o JSON) | `text` (texto hasta el cursor), `cursor` (opcional, en caracteres), `limit` (10), `tag` (prefijo de etiqueta EAGLES, p. ej. `VMIP3P`), `context` (`true`), `validate` (`false`) |
 | `/v2/languages` | GET | — |
+| `/rules` | GET | — (ids de las reglas cargadas, como los nombra LanguageTool) |
 | `/health` | GET | — |
 
 Las respuestas de `/v2/check` tienen la forma de LanguageTool (`matches[].offset/length`

@@ -1,0 +1,2409 @@
+{
+ "date": "2026-11-04",
+ "languagetool_version": "6.6",
+ "summary": {
+  "fork": {
+   "errors": 56,
+   "detected": 17,
+   "corrected": 15,
+   "correct_sentences": 20,
+   "false_positive_sentences": 0,
+   "extra_matches": 0,
+   "by_category": {
+    "haber impersonal": [
+     0,
+     4
+    ],
+    "dequeísmo": [
+     0,
+     3
+    ],
+    "concordancia": [
+     0,
+     6
+    ],
+    "sino / si no": [
+     2,
+     2
+    ],
+    "tilde diacrítica": [
+     5,
+     8
+    ],
+    "signos de apertura": [
+     0,
+     3
+    ],
+    "queísmo": [
+     0,
+     2
+    ],
+    "interrogativos": [
+     3,
+     3
+    ],
+    "porque / por qué": [
+     1,
+     2
+    ],
+    "homófonos": [
+     4,
+     6
+    ],
+    "vulgarismos": [
+     0,
+     4
+    ],
+    "repetición": [
+     0,
+     1
+    ],
+    "puntuación": [
+     0,
+     1
+    ],
+    "mayúsculas": [
+     0,
+     1
+    ],
+    "preposiciones": [
+     2,
+     3
+    ],
+    "pronombres": [
+     0,
+     1
+    ],
+    "verbos": [
+     0,
+     3
+    ],
+    "ortografía": [
+     0,
+     3
+    ]
+   }
+  },
+  "languagetool": {
+   "errors": 56,
+   "detected": 48,
+   "corrected": 45,
+   "correct_sentences": 20,
+   "false_positive_sentences": 0,
+   "extra_matches": 0,
+   "by_category": {
+    "haber impersonal": [
+     4,
+     4
+    ],
+    "dequeísmo": [
+     3,
+     3
+    ],
+    "concordancia": [
+     5,
+     6
+    ],
+    "sino / si no": [
+     2,
+     2
+    ],
+    "tilde diacrítica": [
+     7,
+     8
+    ],
+    "signos de apertura": [
+     3,
+     3
+    ],
+    "queísmo": [
+     2,
+     2
+    ],
+    "interrogativos": [
+     3,
+     3
+    ],
+    "porque / por qué": [
+     2,
+     2
+    ],
+    "homófonos": [
+     4,
+     6
+    ],
+    "vulgarismos": [
+     3,
+     4
+    ],
+    "repetición": [
+     1,
+     1
+    ],
+    "puntuación": [
+     1,
+     1
+    ],
+    "mayúsculas": [
+     1,
+     1
+    ],
+    "preposiciones": [
+     3,
+     3
+    ],
+    "pronombres": [
+     0,
+     1
+    ],
+    "verbos": [
+     2,
+     3
+    ],
+    "ortografía": [
+     2,
+     3
+    ]
+   }
+  }
+ },
+ "coverage": {
+  "fork_and_lt": 17,
+  "lt": 48
+ },
+ "missed": [
+  {
+   "rule": "MORFOLOGIK_RULE_ES",
+   "kind": "Java",
+   "cases": [
+    "apertura-1",
+    "vulgarismo-1",
+    "verbos-2",
+    "verbos-3",
+    "ortografia-2",
+    "ortografia-3"
+   ]
+  },
+  {
+   "rule": "DEQUEISMO",
+   "kind": "XML",
+   "cases": [
+    "dequeismo-1",
+    "dequeismo-2",
+    "dequeismo-3"
+   ]
+  },
+  {
+   "rule": "ID_HUBO_HUBIERON",
+   "kind": "XML",
+   "cases": [
+    "haber-impersonal-1",
+    "haber-impersonal-2",
+    "haber-impersonal-3"
+   ]
+  },
+  {
+   "rule": "AGREEMENT_DET_NOUN",
+   "kind": "en el fork",
+   "cases": [
+    "concordancia-1",
+    "concordancia-4"
+   ]
+  },
+  {
+   "rule": "ES_QUESTION_MARK",
+   "kind": "Java",
+   "cases": [
+    "apertura-1",
+    "apertura-2"
+   ]
+  },
+  {
+   "rule": "QUEISMO",
+   "kind": "XML",
+   "cases": [
+    "queismo-1",
+    "queismo-2"
+   ]
+  },
+  {
+   "rule": "AGREEMENT_DET_GN",
+   "kind": "XML",
+   "cases": [
+    "concordancia-2"
+   ]
+  },
+  {
+   "rule": "AGREEMENT_POSTPONED_ADJ",
+   "kind": "XML",
+   "cases": [
+    "concordancia-3"
+   ]
+  },
+  {
+   "rule": "COMMA_PARENTHESIS_WHITESPACE",
+   "kind": "Java",
+   "cases": [
+    "puntuacion-1"
+   ]
+  },
+  {
+   "rule": "CONCORDANCIAS_ATRIBUTO",
+   "kind": "XML",
+   "cases": [
+    "concordancia-6"
+   ]
+  },
+  {
+   "rule": "DETRAS_PX",
+   "kind": "en el fork",
+   "cases": [
+    "preposicion-2"
+   ]
+  },
+  {
+   "rule": "ES_SIMPLE_REPLACE_SIMPLE_ANDÉ",
+   "kind": "Java",
+   "cases": [
+    "vulgarismo-3"
+   ]
+  },
+  {
+   "rule": "HAIGA",
+   "kind": "XML",
+   "cases": [
+    "vulgarismo-2"
+   ]
+  },
+  {
+   "rule": "HAN_HABIDO",
+   "kind": "XML",
+   "cases": [
+    "haber-impersonal-4"
+   ]
+  },
+  {
+   "rule": "MAS",
+   "kind": "XML",
+   "cases": [
+    "tilde-mas-1"
+   ]
+  },
+  {
+   "rule": "PORQUE",
+   "kind": "en el fork",
+   "cases": [
+    "porque-1"
+   ]
+  },
+  {
+   "rule": "SI_AFIRMACION2",
+   "kind": "XML",
+   "cases": [
+    "tilde-si-1"
+   ]
+  },
+  {
+   "rule": "SPANISH_WORD_REPEAT_RULE",
+   "kind": "Java",
+   "cases": [
+    "repeticion-1"
+   ]
+  },
+  {
+   "rule": "UPPERCASE_SENTENCE_START",
+   "kind": "Java",
+   "cases": [
+    "mayuscula-1"
+   ]
+  }
+ ],
+ "checks": {
+  "haber-impersonal-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "Habían",
+      "fix": "Había",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.7
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "Habían",
+      "fix": "Había",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "ID_HUBO_HUBIERON"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 16.1
+   }
+  },
+  "dequeismo-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "de que",
+      "fix": "que",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 1.9
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "de que",
+      "fix": "que",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "DEQUEISMO"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 15.6
+   }
+  },
+  "concordancia-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "niño",
+      "fix": "niños",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.9
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "niño",
+      "fix": "niños",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "AGREEMENT_DET_NOUN"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 25.2
+   }
+  },
+  "sino-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "si no",
+      "fix": "sino",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "SINO_SI_NO"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 2.2
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "si no",
+      "fix": "sino",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "SINO_SI_NO"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 14.1
+   }
+  },
+  "tilde-esta-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "esta",
+      "fix": "está",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "ESTA_TILDE"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 1.8
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "esta",
+      "fix": "está",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "ESTA_TILDE"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 13.3
+   }
+  },
+  "apertura-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "fuistes",
+      "fix": "fuiste",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     },
+     {
+      "span": "Ayer",
+      "fix": "¿Ayer",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.9
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "fuistes",
+      "fix": "fuiste",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "MORFOLOGIK_RULE_ES"
+      ]
+     },
+     {
+      "span": "Ayer",
+      "fix": "¿Ayer",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "ES_QUESTION_MARK"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 18.9
+   }
+  },
+  "haber-impersonal-2": {
+   "fork": {
+    "errors": [
+     {
+      "span": "Hubieron",
+      "fix": "Hubo",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 3.0
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "Hubieron",
+      "fix": "Hubo",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "ID_HUBO_HUBIERON"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 15.5
+   }
+  },
+  "haber-impersonal-3": {
+   "fork": {
+    "errors": [
+     {
+      "span": "habrán",
+      "fix": "habrá",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.9
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "habrán",
+      "fix": "habrá",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "ID_HUBO_HUBIERON"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 16.0
+   }
+  },
+  "haber-impersonal-4": {
+   "fork": {
+    "errors": [
+     {
+      "span": "Han habido",
+      "fix": "Ha habido",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 3.0
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "Han habido",
+      "fix": "Ha habido",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "HAN_HABIDO"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 17.4
+   }
+  },
+  "dequeismo-2": {
+   "fork": {
+    "errors": [
+     {
+      "span": "de que",
+      "fix": "que",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 3.6
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "de que",
+      "fix": "que",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "DEQUEISMO"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 20.5
+   }
+  },
+  "dequeismo-3": {
+   "fork": {
+    "errors": [
+     {
+      "span": "de que",
+      "fix": "que",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.2
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "de que",
+      "fix": "que",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "DEQUEISMO"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 15.0
+   }
+  },
+  "queismo-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "alegro que",
+      "fix": "alegro de que",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.6
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "alegro que",
+      "fix": "alegro de que",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "QUEISMO"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 15.3
+   }
+  },
+  "queismo-2": {
+   "fork": {
+    "errors": [
+     {
+      "span": "seguro que",
+      "fix": "seguro de que",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 3.0
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "seguro que",
+      "fix": "seguro de que",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "QUEISMO"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 12.3
+   }
+  },
+  "concordancia-2": {
+   "fork": {
+    "errors": [
+     {
+      "span": "Las casa",
+      "fix": "La casa",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 5.5
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "Las casa",
+      "fix": "La casa",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "AGREEMENT_DET_GN"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 12.5
+   }
+  },
+  "concordancia-3": {
+   "fork": {
+    "errors": [
+     {
+      "span": "negra",
+      "fix": "negros",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.2
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "negra",
+      "fix": "negros",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "AGREEMENT_POSTPONED_ADJ"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 15.5
+   }
+  },
+  "concordancia-4": {
+   "fork": {
+    "errors": [
+     {
+      "span": "La problema",
+      "fix": "El problema",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 3.5
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "La problema",
+      "fix": "El problema",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "AGREEMENT_DET_NOUN"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 17.5
+   }
+  },
+  "concordancia-5": {
+   "fork": {
+    "errors": [
+     {
+      "span": "viene",
+      "fix": "vienen",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 1.7
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "viene",
+      "fix": "vienen",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 16.6
+   }
+  },
+  "concordancia-6": {
+   "fork": {
+    "errors": [
+     {
+      "span": "frío",
+      "fix": "fría",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 1.9
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "frío",
+      "fix": "fría",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "CONCORDANCIAS_ATRIBUTO"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 14.4
+   }
+  },
+  "sino-2": {
+   "fork": {
+    "errors": [
+     {
+      "span": "sino",
+      "fix": "si no",
+      "detected": true,
+      "corrected": false,
+      "rules": [
+       "COMMA_SINO"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 3.3
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "sino",
+      "fix": "si no",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "SINO_SI_NO"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 12.8
+   }
+  },
+  "tilde-el-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "el",
+      "fix": "él",
+      "detected": true,
+      "corrected": false,
+      "rules": [
+       "CONTRACCIONES"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 3.7
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "el",
+      "fix": "él",
+      "detected": true,
+      "corrected": false,
+      "rules": [
+       "CONTRACCIONES"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 18.1
+   }
+  },
+  "tilde-tu-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "Tu",
+      "fix": "Tú",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "TU_TILDE"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 2.3
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "Tu",
+      "fix": "Tú",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "TU_TILDE"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 18.2
+   }
+  },
+  "tilde-mas-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "mas",
+      "fix": "más",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.0
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "mas",
+      "fix": "más",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "MAS"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 13.4
+   }
+  },
+  "tilde-si-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "si",
+      "fix": "sí",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.0
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "si",
+      "fix": "sí",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "SI_AFIRMACION2"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 12.0
+   }
+  },
+  "tilde-se-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "se",
+      "fix": "sé",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 3.0
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "se",
+      "fix": "sé",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 11.6
+   }
+  },
+  "tilde-mi-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "mi",
+      "fix": "mí",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "PRONOM_TILDE"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 2.3
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "mi",
+      "fix": "mí",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "MI_TILDE"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 18.3
+   }
+  },
+  "tilde-aun-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "Aun",
+      "fix": "Aún",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "AUN2"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 2.4
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "Aun",
+      "fix": "Aún",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "AUN2"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 13.4
+   }
+  },
+  "tilde-que-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "que",
+      "fix": "qué",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "QUE"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 1.7
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "que",
+      "fix": "qué",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "QUE_TILDE2"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 11.1
+   }
+  },
+  "tilde-como-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "Como",
+      "fix": "Cómo",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "QUE"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 2.1
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "Como",
+      "fix": "Cómo",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "INTERROGATIVOS_CON_TILDE_OS"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 13.2
+   }
+  },
+  "tilde-donde-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "Donde",
+      "fix": "Dónde",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "QUE"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 2.0
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "Donde",
+      "fix": "Dónde",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "INTERROGATIVOS_CON_TILDE_OS"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 14.9
+   }
+  },
+  "porque-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "Porque",
+      "fix": "Por qué",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.1
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "Porque",
+      "fix": "Por qué",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "PORQUE"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 34.5
+   }
+  },
+  "porque-2": {
+   "fork": {
+    "errors": [
+     {
+      "span": "por que",
+      "fix": "por qué",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "PORQUE"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 2.2
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "por que",
+      "fix": "por qué",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "PORQUE"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 28.2
+   }
+  },
+  "haber-aver-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "haber",
+      "fix": "a ver",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "HABER_AVER"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 2.7
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "haber",
+      "fix": "a ver",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "HABER_AVER"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 11.9
+   }
+  },
+  "haber-aver-2": {
+   "fork": {
+    "errors": [
+     {
+      "span": "a ver",
+      "fix": "haber",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "A_VER_HABER"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 3.8
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "a ver",
+      "fix": "haber",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "A_VER_HABER"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 12.6
+   }
+  },
+  "hay-ahi-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "Ahí",
+      "fix": "Hay",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.3
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "Ahí",
+      "fix": "Hay",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 27.1
+   }
+  },
+  "echo-hecho-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "echo",
+      "fix": "hecho",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "ECHO_HECHO"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 1.8
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "echo",
+      "fix": "hecho",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "ECHO_HECHO"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 16.2
+   }
+  },
+  "vaya-valla-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "valla",
+      "fix": "vaya",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "VALLA_VAYA"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 2.8
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "valla",
+      "fix": "vaya",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "VALLA_VAYA"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 14.8
+   }
+  },
+  "tuvo-tubo-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "tubo",
+      "fix": "tuvo",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 6.7
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "tubo",
+      "fix": "tuvo",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 12.6
+   }
+  },
+  "vulgarismo-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "Dijistes",
+      "fix": "Dijiste",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.3
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "Dijistes",
+      "fix": "Dijiste",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "MORFOLOGIK_RULE_ES"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 52.8
+   }
+  },
+  "vulgarismo-2": {
+   "fork": {
+    "errors": [
+     {
+      "span": "haiga",
+      "fix": "haya",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 1.9
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "haiga",
+      "fix": "haya",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "HAIGA"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 16.8
+   }
+  },
+  "vulgarismo-3": {
+   "fork": {
+    "errors": [
+     {
+      "span": "andé",
+      "fix": "anduve",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.8
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "andé",
+      "fix": "anduve",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "ES_SIMPLE_REPLACE_SIMPLE_ANDÉ"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 15.9
+   }
+  },
+  "vulgarismo-4": {
+   "fork": {
+    "errors": [
+     {
+      "span": "cabo",
+      "fix": "quepo",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 3.5
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "cabo",
+      "fix": "quepo",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 15.1
+   }
+  },
+  "apertura-2": {
+   "fork": {
+    "errors": [
+     {
+      "span": "Qué",
+      "fix": "¡Qué",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.1
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "Qué",
+      "fix": "¡Qué",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "ES_QUESTION_MARK"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 11.9
+   }
+  },
+  "repeticion-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "la la",
+      "fix": "la",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 3.0
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "la la",
+      "fix": "la",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "SPANISH_WORD_REPEAT_RULE"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 14.9
+   }
+  },
+  "puntuacion-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": " ,",
+      "fix": ",",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 3.2
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": " ,",
+      "fix": ",",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "COMMA_PARENTHESIS_WHITESPACE"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 11.7
+   }
+  },
+  "mayuscula-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "el",
+      "fix": "El",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.0
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "el",
+      "fix": "El",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "UPPERCASE_SENTENCE_START"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 11.0
+   }
+  },
+  "preposicion-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "en base a",
+      "fix": "con base en",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "EN_BASE_A"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 2.6
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "en base a",
+      "fix": "con base en",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "EN_BASE_A"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 10.8
+   }
+  },
+  "preposicion-2": {
+   "fork": {
+    "errors": [
+     {
+      "span": "detrás mío",
+      "fix": "detrás de mí",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 1.8
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "detrás mío",
+      "fix": "detrás de mí",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "DETRAS_PX"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 11.5
+   }
+  },
+  "preposicion-3": {
+   "fork": {
+    "errors": [
+     {
+      "span": "delante suyo",
+      "fix": "delante de él",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "DETRAS_PX"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 2.1
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "delante suyo",
+      "fix": "delante de él",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "DETRAS_PX"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 10.7
+   }
+  },
+  "pronombres-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "le molestó",
+      "fix": "les molestó",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 5.1
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "le molestó",
+      "fix": "les molestó",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 15.0
+   }
+  },
+  "verbos-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "tendría",
+      "fix": "tuviera",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.5
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "tendría",
+      "fix": "tuviera",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 11.0
+   }
+  },
+  "verbos-2": {
+   "fork": {
+    "errors": [
+     {
+      "span": "satisfació",
+      "fix": "satisfizo",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.7
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "satisfació",
+      "fix": "satisfizo",
+      "detected": true,
+      "corrected": false,
+      "rules": [
+       "MORFOLOGIK_RULE_ES"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 13.9
+   }
+  },
+  "verbos-3": {
+   "fork": {
+    "errors": [
+     {
+      "span": "ponido",
+      "fix": "puesto",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 4.3
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "ponido",
+      "fix": "puesto",
+      "detected": true,
+      "corrected": false,
+      "rules": [
+       "MORFOLOGIK_RULE_ES"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 15.3
+   }
+  },
+  "ortografia-1": {
+   "fork": {
+    "errors": [
+     {
+      "span": "boy",
+      "fix": "voy",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 1.9
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "boy",
+      "fix": "voy",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 10.6
+   }
+  },
+  "ortografia-2": {
+   "fork": {
+    "errors": [
+     {
+      "span": "interezante",
+      "fix": "interesante",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 2.5
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "interezante",
+      "fix": "interesante",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "MORFOLOGIK_RULE_ES"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 15.3
+   }
+  },
+  "ortografia-3": {
+   "fork": {
+    "errors": [
+     {
+      "span": "exámen",
+      "fix": "examen",
+      "detected": false,
+      "corrected": false,
+      "rules": []
+     }
+    ],
+    "extra": [],
+    "ms": 3.0
+   },
+   "languagetool": {
+    "errors": [
+     {
+      "span": "exámen",
+      "fix": "examen",
+      "detected": true,
+      "corrected": true,
+      "rules": [
+       "MORFOLOGIK_RULE_ES"
+      ]
+     }
+    ],
+    "extra": [],
+    "ms": 20.4
+   }
+  },
+  "ok-1": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 3.5
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 15.8
+   }
+  },
+  "ok-2": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.5
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 11.8
+   }
+  },
+  "ok-3": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.4
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 11.1
+   }
+  },
+  "ok-4": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 1.9
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 10.6
+   }
+  },
+  "ok-5": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.0
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 11.7
+   }
+  },
+  "ok-6": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.0
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 10.5
+   }
+  },
+  "ok-7": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.1
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 18.4
+   }
+  },
+  "ok-8": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.4
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 11.8
+   }
+  },
+  "ok-9": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 1.8
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 10.3
+   }
+  },
+  "ok-10": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.1
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 12.1
+   }
+  },
+  "ok-11": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.3
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 10.9
+   }
+  },
+  "ok-12": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 3.1
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 10.7
+   }
+  },
+  "ok-13": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.7
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 14.8
+   }
+  },
+  "ok-14": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.1
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 12.7
+   }
+  },
+  "ok-15": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.1
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 17.4
+   }
+  },
+  "ok-16": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 3.7
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 12.5
+   }
+  },
+  "ok-17": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.9
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 11.7
+   }
+  },
+  "ok-18": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.2
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 11.5
+   }
+  },
+  "ok-19": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.5
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 10.9
+   }
+  },
+  "ok-20": {
+   "fork": {
+    "errors": [],
+    "extra": [],
+    "ms": 2.4
+   },
+   "languagetool": {
+    "errors": [],
+    "extra": [],
+    "ms": 20.4
+   }
+  }
+ },
+ "completions": {
+  "verbo-3p": {
+   "ok": true,
+   "words": [
+    "juegan",
+    "jueguen",
+    "juerguean",
+    "juergueen",
+    "juergueaban"
+   ],
+   "context": [
+    "A[QO]?MP*",
+    "V?[IS]?3P*"
+   ]
+  },
+  "subj-imperfecto": {
+   "ok": true,
+   "words": [
+    "escribiéramos",
+    "escribiésemos",
+    "escribamos",
+    "escribimos",
+    "escribíamos"
+   ],
+   "context": [
+    "V?[IS]?1P*"
+   ]
+  },
+  "adj-fp": {
+   "ok": true,
+   "words": [
+    "bonitas",
+    "boniteras",
+    "bonitísimas",
+    "bonita",
+    "bonito"
+   ],
+   "context": [
+    "A[QO]?FP*",
+    "V?[IS]?3P*"
+   ]
+  },
+  "adj-ms": {
+   "ok": true,
+   "words": [
+    "bonito",
+    "bonitero",
+    "bonitísimo",
+    "bonita",
+    "bonitas"
+   ],
+   "context": [
+    "A[QO]?MS*",
+    "V?[IS]?3S*"
+   ]
+  },
+  "copula-fp": {
+   "ok": true,
+   "words": [
+    "bonitas",
+    "boniteras",
+    "bonitísimas",
+    "bonita",
+    "bonito"
+   ],
+   "context": [
+    "A[QO]?FP*"
+   ]
+  },
+  "copula-fs": {
+   "ok": true,
+   "words": [
+    "bonita",
+    "bonitera",
+    "bonitísima",
+    "bonito",
+    "bonitas"
+   ],
+   "context": [
+    "A[QO]?FS*"
+   ]
+  },
+  "pron-1s": {
+   "ok": true,
+   "words": [
+    "pueda",
+    "puedo",
+    "pueble",
+    "pueblo",
+    "puentee"
+   ],
+   "context": [
+    "V?[IS]?1S*"
+   ]
+  },
+  "pron-3s": {
+   "ok": true,
+   "words": [
+    "escriba",
+    "escribe",
+    "escribió",
+    "escribía",
+    "escribirá"
+   ],
+   "context": [
+    "V?[IS]?3S*"
+   ]
+  },
+  "si-1s": {
+   "ok": true,
+   "words": [
+    "tuviera",
+    "tuviese",
+    "tuve",
+    "tuviere",
+    "tuvo"
+   ],
+   "context": [
+    "V?[IS]?1S*"
+   ]
+  },
+  "det-fs": {
+   "ok": true,
+   "words": [
+    "casa",
+    "casba",
+    "casca",
+    "casia",
+    "caspa"
+   ],
+   "context": [
+    "NCFS*",
+    "A[QO]?FS*",
+    "V?[IS]?3S*"
+   ]
+  },
+  "mayuscula": {
+   "ok": true,
+   "words": [
+    "JUEGAN",
+    "JUEGUEN",
+    "JUERGUEAN",
+    "JUERGUEEN",
+    "JUERGUEABAN"
+   ],
+   "context": [
+    "A[QO]?MP*",
+    "V?[IS]?3P*"
+   ]
+  },
+  "nueva-oracion": {
+   "ok": true,
+   "words": [
+    "Juez",
+    "Juega",
+    "Juego",
+    "Juera",
+    "Jueza"
+   ],
+   "context": []
+  }
+ }
+}

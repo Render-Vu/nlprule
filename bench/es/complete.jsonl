@@ -1,0 +1,12 @@
+{"id": "verbo-3p", "text": "Los niños jue", "expect": ["juegan"], "top": 1}
+{"id": "subj-imperfecto", "text": "si nosotros escrib", "expect": ["escribiéramos", "escribiésemos"], "top": 2}
+{"id": "adj-fp", "text": "las casas bonit", "expect": ["bonitas"], "top": 1}
+{"id": "adj-ms", "text": "el perro bonit", "expect": ["bonito"], "top": 1}
+{"id": "copula-fp", "text": "Las niñas son bonit", "expect": ["bonitas"], "top": 1}
+{"id": "copula-fs", "text": "Mi casa es bonit", "expect": ["bonita"], "top": 1}
+{"id": "pron-1s", "text": "Yo pue", "expect": ["puedo"], "top": 2}
+{"id": "pron-3s", "text": "Ella escrib", "expect": ["escribe"], "top": 3}
+{"id": "si-1s", "text": "si yo tuv", "expect": ["tuviera", "tuviese"], "top": 2}
+{"id": "det-fs", "text": "una cas", "expect": ["casa"], "top": 3}
+{"id": "mayuscula", "text": "Los niños JUE", "expect": ["JUEGAN"], "top": 1}
+{"id": "nueva-oracion", "text": "Los niños. Jue", "expect": [], "top": 10, "expect_no_context": true}

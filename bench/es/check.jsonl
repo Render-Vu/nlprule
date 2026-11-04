@@ -1,0 +1,75 @@
+{"id": "haber-impersonal-1", "cat": "haber impersonal", "text": "Habían muchas personas en la fiesta.", "errors": [{"span": "Habían", "fix": "Había"}], "source": "documento"}
+{"id": "dequeismo-1", "cat": "dequeísmo", "text": "Pienso de que es buena idea.", "errors": [{"span": "de que", "fix": "que"}], "source": "documento"}
+{"id": "concordancia-1", "cat": "concordancia", "text": "Los niño juega en el parque.", "errors": [{"span": "niño", "fix": "niños"}], "source": "documento"}
+{"id": "sino-1", "cat": "sino / si no", "text": "No es rojo si no azul.", "errors": [{"span": "si no", "fix": "sino"}], "source": "documento"}
+{"id": "tilde-esta-1", "cat": "tilde diacrítica", "text": "El agua esta fría.", "errors": [{"span": "esta", "fix": "está"}], "source": "documento"}
+{"id": "apertura-1", "cat": "signos de apertura", "text": "Ayer fuistes al cine?", "errors": [{"span": "fuistes", "fix": "fuiste"}, {"span": "Ayer", "fix": "¿Ayer"}], "source": "documento"}
+{"id": "haber-impersonal-2", "cat": "haber impersonal", "text": "Hubieron muchos problemas durante el viaje.", "errors": [{"span": "Hubieron", "fix": "Hubo"}]}
+{"id": "haber-impersonal-3", "cat": "haber impersonal", "text": "Mañana habrán más de cien invitados.", "errors": [{"span": "habrán", "fix": "habrá"}]}
+{"id": "haber-impersonal-4", "cat": "haber impersonal", "text": "Han habido varias quejas este mes.", "errors": [{"span": "Han habido", "fix": "Ha habido"}]}
+{"id": "dequeismo-2", "cat": "dequeísmo", "text": "Me dijo de que vendría temprano.", "errors": [{"span": "de que", "fix": "que"}]}
+{"id": "dequeismo-3", "cat": "dequeísmo", "text": "Es posible de que llueva mañana.", "errors": [{"span": "de que", "fix": "que"}]}
+{"id": "queismo-1", "cat": "queísmo", "text": "Me alegro que hayas venido.", "errors": [{"span": "alegro que", "fix": "alegro de que"}]}
+{"id": "queismo-2", "cat": "queísmo", "text": "Estoy seguro que lo conseguirás.", "errors": [{"span": "seguro que", "fix": "seguro de que"}]}
+{"id": "concordancia-2", "cat": "concordancia", "text": "Las casa blanca está cerrada.", "errors": [{"span": "Las casa", "fix": "La casa"}]}
+{"id": "concordancia-3", "cat": "concordancia", "text": "Compré unos zapatos negra.", "errors": [{"span": "negra", "fix": "negros"}]}
+{"id": "concordancia-4", "cat": "concordancia", "text": "La problema es muy grave.", "errors": [{"span": "La problema", "fix": "El problema"}]}
+{"id": "concordancia-5", "cat": "concordancia", "text": "Mis amigos viene a cenar esta noche.", "errors": [{"span": "viene", "fix": "vienen"}]}
+{"id": "concordancia-6", "cat": "concordancia", "text": "El agua está frío.", "errors": [{"span": "frío", "fix": "fría"}]}
+{"id": "sino-2", "cat": "sino / si no", "text": "No quiero té sino no hay café.", "errors": [{"span": "sino", "fix": "si no"}]}
+{"id": "tilde-el-1", "cat": "tilde diacrítica", "text": "Se lo di a el ayer.", "errors": [{"span": "el", "fix": "él"}]}
+{"id": "tilde-tu-1", "cat": "tilde diacrítica", "text": "Tu eres mi mejor amigo.", "errors": [{"span": "Tu", "fix": "Tú"}]}
+{"id": "tilde-mas-1", "cat": "tilde diacrítica", "text": "Quiero mas café, por favor.", "errors": [{"span": "mas", "fix": "más"}]}
+{"id": "tilde-si-1", "cat": "tilde diacrítica", "text": "Dijo que si, que vendría.", "errors": [{"span": "si", "fix": "sí"}]}
+{"id": "tilde-se-1", "cat": "tilde diacrítica", "text": "No se nada de ese asunto.", "errors": [{"span": "se", "fix": "sé"}]}
+{"id": "tilde-mi-1", "cat": "tilde diacrítica", "text": "Este regalo es para mi.", "errors": [{"span": "mi", "fix": "mí"}]}
+{"id": "tilde-aun-1", "cat": "tilde diacrítica", "text": "Aun no ha llegado el tren.", "errors": [{"span": "Aun", "fix": "Aún"}]}
+{"id": "tilde-que-1", "cat": "interrogativos", "text": "No sé que hacer.", "errors": [{"span": "que", "fix": "qué"}]}
+{"id": "tilde-como-1", "cat": "interrogativos", "text": "¿Como te llamas?", "errors": [{"span": "Como", "fix": "Cómo"}]}
+{"id": "tilde-donde-1", "cat": "interrogativos", "text": "¿Donde está la estación?", "errors": [{"span": "Donde", "fix": "Dónde"}]}
+{"id": "porque-1", "cat": "porque / por qué", "text": "¿Porque no viniste ayer?", "errors": [{"span": "Porque", "fix": "Por qué"}]}
+{"id": "porque-2", "cat": "porque / por qué", "text": "No sé por que se fue.", "errors": [{"span": "por que", "fix": "por qué"}]}
+{"id": "haber-aver-1", "cat": "homófonos", "text": "Vamos haber qué pasa.", "errors": [{"span": "haber", "fix": "a ver"}]}
+{"id": "haber-aver-2", "cat": "homófonos", "text": "Tiene que a ver una solución.", "errors": [{"span": "a ver", "fix": "haber"}]}
+{"id": "hay-ahi-1", "cat": "homófonos", "text": "Ahí muchas cosas que hacer.", "errors": [{"span": "Ahí", "fix": "Hay"}]}
+{"id": "echo-hecho-1", "cat": "homófonos", "text": "Ya he echo los deberes.", "errors": [{"span": "echo", "fix": "hecho"}]}
+{"id": "vaya-valla-1", "cat": "homófonos", "text": "Espero que te valla bien.", "errors": [{"span": "valla", "fix": "vaya"}]}
+{"id": "tuvo-tubo-1", "cat": "homófonos", "text": "El tubo que irse temprano.", "errors": [{"span": "tubo", "fix": "tuvo"}]}
+{"id": "vulgarismo-1", "cat": "vulgarismos", "text": "Dijistes que llegarías a las ocho.", "errors": [{"span": "Dijistes", "fix": "Dijiste"}]}
+{"id": "vulgarismo-2", "cat": "vulgarismos", "text": "Ojalá haiga sol mañana.", "errors": [{"span": "haiga", "fix": "haya"}]}
+{"id": "vulgarismo-3", "cat": "vulgarismos", "text": "Yo andé por el parque.", "errors": [{"span": "andé", "fix": "anduve"}]}
+{"id": "vulgarismo-4", "cat": "vulgarismos", "text": "No cabo en el coche.", "errors": [{"span": "cabo", "fix": "quepo"}]}
+{"id": "apertura-2", "cat": "signos de apertura", "text": "Qué alegría verte!", "errors": [{"span": "Qué", "fix": "¡Qué"}]}
+{"id": "repeticion-1", "cat": "repetición", "text": "Fuimos a la la playa.", "errors": [{"span": "la la", "fix": "la"}]}
+{"id": "puntuacion-1", "cat": "puntuación", "text": "Hola , ¿cómo estás?", "errors": [{"span": " ,", "fix": ","}]}
+{"id": "mayuscula-1", "cat": "mayúsculas", "text": "el lunes empieza el curso.", "errors": [{"span": "el", "fix": "El"}]}
+{"id": "preposicion-1", "cat": "preposiciones", "text": "Lo decidimos en base a los datos.", "errors": [{"span": "en base a", "fix": "con base en"}]}
+{"id": "preposicion-2", "cat": "preposiciones", "text": "Vive detrás mío.", "errors": [{"span": "detrás mío", "fix": "detrás de mí"}]}
+{"id": "preposicion-3", "cat": "preposiciones", "text": "Se sentó delante suyo.", "errors": [{"span": "delante suyo", "fix": "delante de él"}]}
+{"id": "pronombres-1", "cat": "pronombres", "text": "A mi hermana le dije que la quiero, y a mis padres les dije lo mismo; pero a ellos le molestó.", "errors": [{"span": "le molestó", "fix": "les molestó"}]}
+{"id": "verbos-1", "cat": "verbos", "text": "Si tendría dinero, viajaría más.", "errors": [{"span": "tendría", "fix": "tuviera"}]}
+{"id": "verbos-2", "cat": "verbos", "text": "Ayer satisfació a todos.", "errors": [{"span": "satisfació", "fix": "satisfizo"}]}
+{"id": "verbos-3", "cat": "verbos", "text": "Los niños se han ponido el abrigo.", "errors": [{"span": "ponido", "fix": "puesto"}]}
+{"id": "ortografia-1", "cat": "ortografía", "text": "Mañana boy al médico.", "errors": [{"span": "boy", "fix": "voy"}]}
+{"id": "ortografia-2", "cat": "ortografía", "text": "Ese libro es muy interezante.", "errors": [{"span": "interezante", "fix": "interesante"}]}
+{"id": "ortografia-3", "cat": "ortografía", "text": "Tenemos que hacer un exámen.", "errors": [{"span": "exámen", "fix": "examen"}]}
+{"id": "ok-1", "cat": "correcta", "text": "Había muchas personas en la fiesta.", "errors": []}
+{"id": "ok-2", "cat": "correcta", "text": "Pienso que es buena idea.", "errors": []}
+{"id": "ok-3", "cat": "correcta", "text": "Los niños juegan en el parque.", "errors": []}
+{"id": "ok-4", "cat": "correcta", "text": "No es rojo sino azul.", "errors": []}
+{"id": "ok-5", "cat": "correcta", "text": "El agua está fría.", "errors": []}
+{"id": "ok-6", "cat": "correcta", "text": "¿Ayer fuiste al cine?", "errors": []}
+{"id": "ok-7", "cat": "correcta", "text": "Es un problema muy muy grave.", "errors": [], "note": "repetición enfática aceptable"}
+{"id": "ok-8", "cat": "correcta", "text": "Si no vienes, me enfado.", "errors": []}
+{"id": "ok-9", "cat": "correcta", "text": "Esta casa es más grande que aquella.", "errors": []}
+{"id": "ok-10", "cat": "correcta", "text": "Me alegro de que hayas venido.", "errors": []}
+{"id": "ok-11", "cat": "correcta", "text": "No sé qué hacer ni por qué se fue.", "errors": []}
+{"id": "ok-12", "cat": "correcta", "text": "Vamos a ver qué pasa.", "errors": []}
+{"id": "ok-13", "cat": "correcta", "text": "Ya he hecho los deberes y te echo de menos.", "errors": []}
+{"id": "ok-14", "cat": "correcta", "text": "Él me dio el libro a mí.", "errors": []}
+{"id": "ok-15", "cat": "correcta", "text": "Si tuviera dinero, viajaría más.", "errors": []}
+{"id": "ok-16", "cat": "correcta", "text": "Aun así, todavía no ha llegado; aún lo esperamos.", "errors": []}
+{"id": "ok-17", "cat": "correcta", "text": "Las niñas son bonitas y los árboles, altos.", "errors": []}
+{"id": "ok-18", "cat": "correcta", "text": "Hay que ver lo que ha crecido.", "errors": []}
+{"id": "ok-19", "cat": "correcta", "text": "Se lo di a él ayer por la tarde.", "errors": []}
+{"id": "ok-20", "cat": "correcta", "text": "¡Qué alegría verte!", "errors": []}
