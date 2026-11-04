@@ -1,5 +1,6 @@
 {
     "allow_errors": true,
+    "skip_unsupported": true,
     "ignore_ids": [
         "DISAMBIGUATION/IGNORE_ENGLISH_WORDS",
         "DISAMBIGUATION/IGNORE_ENGLISH_WORDS2"

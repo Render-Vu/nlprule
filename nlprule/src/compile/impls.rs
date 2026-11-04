@@ -374,9 +374,13 @@ impl Tokenizer {
         multiword_tagger: Option<MultiwordTagger>,
         sentencizer: srx::Rules,
         lang_options: TokenizerLangOptions,
+        skip_unsupported: bool,
     ) -> Result<Self, Error> {
         let rules = super::parse_structure::read_disambiguation_rules(path);
         let mut error = None;
+        // with `skip_unsupported`, a rule that can not be built is skipped and the rules after
+        // it are kept; otherwise every rule after the first error is dropped
+        let mut skipped: Vec<String> = Vec::new();
 
         let rules: Vec<_> = rules
             .into_iter()
@@ -404,7 +408,7 @@ impl Tokenizer {
 
                     match DisambiguationRule::from_rule_structure(rule_structure, build_info) {
                         Ok(mut rule) => {
-                            if error.is_none()
+                            if (error.is_none() || skip_unsupported)
                                 && (lang_options.ids.is_empty()
                                     || lang_options.ids.iter().any(|x| x.is_match(&id)))
                                 && !lang_options.ignore_ids.iter().any(|x| x.is_match(&id))
@@ -417,7 +421,9 @@ impl Tokenizer {
                             }
                         }
                         Err(x) => {
-                            if error.is_none() {
+                            if skip_unsupported {
+                                skipped.push(format!("{}: {}", id, x));
+                            } else if error.is_none() {
                                 error = Some(format!("[Rule] {}", x));
                             }
                             None
@@ -425,13 +431,23 @@ impl Tokenizer {
                     }
                 }
                 Err(x) => {
-                    if error.is_none() {
+                    if skip_unsupported {
+                        skipped.push(format!("[Structure] {}", x));
+                    } else if error.is_none() {
                         error = Some(format!("[Structure] {}", x));
                     }
                     None
                 }
             })
             .collect();
+
+        if !skipped.is_empty() {
+            warn!(
+                "Skipped {} unsupported disambiguation rules: {:#?}",
+                skipped.len(),
+                skipped
+            );
+        }
 
         if let Some(x) = error {
             if lang_options.allow_errors {

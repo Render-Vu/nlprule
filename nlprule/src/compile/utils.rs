@@ -35,6 +35,27 @@ lazy_static! {
     };
 }
 
+lazy_static! {
+    static ref TOKENIZER_CONFIGS_RAW: DefaultHashMap<String, serde_json::Value> = {
+        serde_json::from_slice(include_bytes!(concat!(
+            env!("OUT_DIR"),
+            "/",
+            "tokenizer_configs.json"
+        )))
+        .expect("tokenizer configs must be valid JSON")
+    };
+}
+
+/// Whether unsupported disambiguation rules are skipped (keeping the rules after them) for the
+/// language. A compile-time option only: it is not part of the serialized tokenizer options.
+pub(crate) fn tokenizer_skip_unsupported(lang_code: &str) -> bool {
+    TOKENIZER_CONFIGS_RAW
+        .get(lang_code)
+        .and_then(|config| config.get("skip_unsupported"))
+        .and_then(serde_json::Value::as_bool)
+        .unwrap_or(false)
+}
+
 /// Gets the tokenizer language options for the language code
 pub(crate) fn tokenizer_lang_options(lang_code: &str) -> Option<TokenizerLangOptions> {
     TOKENIZER_LANG_OPTIONS.get(lang_code).cloned()

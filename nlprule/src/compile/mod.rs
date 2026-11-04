@@ -179,6 +179,7 @@ pub fn compile(
     };
 
     info!("Creating tokenizer.");
+    let skip_unsupported = utils::tokenizer_skip_unsupported(&lang_code);
     let tokenizer = Tokenizer::from_xml(
         &paths.disambiguation_path,
         &mut build_info,
@@ -186,6 +187,7 @@ pub fn compile(
         multiword_tagger,
         srx::SRX::from_str(&fs::read_to_string(&paths.srx_path)?)?.language_rules(lang_code),
         tokenizer_lang_options,
+        skip_unsupported,
     )?;
     tokenizer.to_writer(tokenizer_dest)?;
 
