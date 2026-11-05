@@ -50,8 +50,11 @@ intencionada, guarda la nueva línea base:
 python3 bench/es/run.py --lt-rules <carpeta rules/es> --save bench/es/baseline.json
 ```
 
-La línea base actual se hizo con LanguageTool 6.6 (`languagetool_version` en el archivo). Con otra
-versión de LanguageTool sus resultados pueden cambiar; vuelve a guardarla para comparar.
+La línea base actual (`baseline.json`) es la del fork con los binarios compilados desde
+LanguageTool 6.6, medida contra LanguageTool 6.6: el fork detecta 26 de 56 errores (54 % de lo que
+detecta LanguageTool). `baseline-lt5.2.json` guarda la de los binarios originales (LanguageTool 5.2):
+17 de 56 (35 %). Con otra versión de LanguageTool sus resultados pueden cambiar; vuelve a guardarla
+para comparar.
 
 El corpus refleja la norma académica tal como la entendemos; algunas frases son discutibles
 (p. ej. «Se lo di a el ayer»: LanguageTool propone «al»). Hay casos que ninguno de los dos detecta

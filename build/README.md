@@ -108,6 +108,10 @@ python build/make_build_dir.py \
     --out_dir=data/es
 ```
 
-Note for Spanish: `disambiguation.xml` is currently manually postprocessed by removing an invalid `<marker>` in `POS_N` and changing one rule ([commit](https://github.com/languagetool-org/languagetool/commit/9a304428341f34e347fc4bef2a4c7c6f03bf1403)). `grammar.xml` is manually postprocessed by fixing the match reference for `EN_TORNO`. These issues will be fixed in the next LanguageTool release.
+With the LanguageTool 6.6 standalone, the dictionary is inside `libs/spanish-pos-dict.jar` (unzip it).
+`make_build_dir.py` resolves the XML entities, merges `style.xml` into `grammar.xml` and appends the
+`*_custom.txt` files; see `binaries/README.md` for the full commands. The note below applies to 5.2.
+
+Note for Spanish (LanguageTool 5.2): `disambiguation.xml` is currently manually postprocessed by removing an invalid `<marker>` in `POS_N` and changing one rule ([commit](https://github.com/languagetool-org/languagetool/commit/9a304428341f34e347fc4bef2a4c7c6f03bf1403)). `grammar.xml` is manually postprocessed by fixing the match reference for `EN_TORNO`. These issues will be fixed in the next LanguageTool release.
 
 The POS dict can be downloaded from https://mvnrepository.com/artifact/org.softcatala/spanish-pos-dict (download the latest version and unzip the `.jar`).

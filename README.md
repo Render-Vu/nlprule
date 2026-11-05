@@ -25,7 +25,7 @@
 > un CLI de prueba y un servidor HTTP compatible con la API `/v2/check` de LanguageTool.
 >
 > ```bash
-> scripts/download_es.sh
+> scripts/download_es.sh   # binarios del fork, compilados desde LanguageTool 6.6
 > cargo run --release -p nlprule --features bin --bin complete -- -t storage/es_tokenizer.bin "Los niños jue"
 > # prefix "jue" | expected ["A[QO]?MP*", "V?[IS]?3P*"]
 > #   juegan   VMIP3P0          ✓

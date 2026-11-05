@@ -10,6 +10,11 @@
 - `scripts/download_es.sh` to fetch the Spanish binaries.
 - `bench/es`: quality benchmark against LanguageTool over the same `/v2/check` API (76 sentences,
   12 completion cases), with a saved baseline and regression exit code. `nlprule-server` gets `/rules`.
+- Spanish binaries compiled from LanguageTool 6.6 in `binaries/es/` (installed by `scripts/download_es.sh`):
+  698 disambiguation rules, 1179 grammar rules; benchmark detection 17/56 -> 26/56 (coverage of LanguageTool
+  35 % -> 54 %), no new false positives. Build tooling updated for current LanguageTool XML (entities,
+  style.xml, `*_custom.txt`, `;` in multiwords, new attributes, examples in antipatterns, `skip_unsupported`
+  disambiguation rules). The `compile`, `test`, `test_disambiguation` and `run` bins build again.
 - `emacs/nlprule-complete.el`: a `completion-at-point` function and minor mode for corfu (or any capf frontend)
   backed by `/complete`, keeping the server ranking, re-querying while typing, with ERT tests.
 
